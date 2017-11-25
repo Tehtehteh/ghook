@@ -1,1 +1,1 @@
-web: gunicorn -k ghook.worker ghook:app
+web: python main.py
