@@ -1,3 +1,5 @@
+import logging
+
 from aiohttp import web
 from aiohttp.web_response import json_response
 
@@ -7,7 +9,7 @@ async def github_hook(request):
 
 
 async def index(request):
-    print(request)
+    logging.info(f'Request: {request}')
     return web.Response(text="QEQ")
 
 app = web.Application()
