@@ -28,6 +28,7 @@ async def github_hook(request):
         if not reviewer:
             log.info(f'Reviewer name is slack not found: {user}')
         else:
+            # asyncio.ensure_future(SlackClient.dispatch(payload['action']))
             asyncio.ensure_future(slack_hook(f'<@{reviewer}> {pull_url}'))
     return json_response({'ok': True})
 
